@@ -1,0 +1,12 @@
+﻿body {
+}
+
+.jumbotron {
+    background-image: url('../../Content/Images/Wood.jpg');
+    background-size: cover;
+    color: white;
+}
+
+.YoTube {
+    text-align: center;
+}
