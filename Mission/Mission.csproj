@@ -162,6 +162,7 @@
     <Content Include="Content\Images\taiwan_taipei_mission_icon.jpg" />
     <Content Include="Content\Images\temple_square_mission_icon.jpg" />
     <Content Include="Content\Images\Wood.jpg" />
+    <Content Include="Content\StyleSheet1.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
