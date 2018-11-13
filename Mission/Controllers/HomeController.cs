@@ -80,5 +80,11 @@ namespace Mission.Controllers
             }
             return View();
         }
+
+        [HttpPost]
+        public ActionResult MissionFAQ(QA question)
+        {
+            return View("Thanks");
+        }
     }
 }

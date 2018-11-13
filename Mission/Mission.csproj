@@ -151,6 +151,7 @@
     </Compile>
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Missions.cs" />
+    <Compile Include="Models\QA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +202,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Mission.cshtml" />
+    <Content Include="Views\Home\Thanks.cshtml" />
     <Content Include="Views\Home\MissionFAQ.cshtml" />
   </ItemGroup>
   <ItemGroup>
