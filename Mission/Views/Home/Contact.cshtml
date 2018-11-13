@@ -1,31 +1,43 @@
-﻿@{
+﻿@model Mission.Models.Contact
+
+@{
     ViewBag.Title = "Contact";
 }
-<head>
-    <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <ul class="ul">
-            <li><a href="@Url.Action("Index","Home")">Index</a></li>
-            <li><a href="@Url.Action("Mission","Home")">Mission</a></li>
-            <li><a href="@Url.Action("MissionFAQ","Home")">MissionFAQ</a></li>
-            <li><a class="active">Contact</a></li>
-            <li><a href="@Url.Action("About","Home")">About</a></li>
-        </ul>
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <ul class="ul">
+        <li><a class="active">Index</a></li>
+        <li><a href="@Url.Action("Mission","Home")">Mission</a></li>
+        <li><a href="@Url.Action("MissionFAQ","Home")">MissionFAQ</a></li>
+        <li><a href="@Url.Action("Contact","Home")">Contact</a></li>
+        <li><a href="@Url.Action("About","Home")">About</a></li>
+    </ul>
+</div>
+<h2>Contact Us</h2>
+
+<div class="jumbotron">
+    <div class="container">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            <p>First Name: @Html.TextBoxFor(x => x.firstName) </p>
+            <p>Last Name: @Html.TextBoxFor(x => x.lastName)</p>
+            <p>Email: @Html.TextBoxFor(x => x.email)</p>
+            <p>Confirm Email: @Html.TextBoxFor(x => x.confirmEmail)</p>
+            <p>
+                Subject? @Html.DropDownListFor(x => x.Subject, new[] {
+new SelectListItem()
+{Text = "Missionaries", Value = "missionaries"},
+new SelectListItem()
+{Text = "Mission Presidents", Value = "missionPresidents"},
+new SelectListItem()
+{Text = "Mission Areas", Value = "missionLocations"},
+}, "Choose an option")
+            </p>
+            <p>Message: @Html.TextBox("message", "", new { @class = "text-danger" })</p>
+            <input type="submit" value="Submit" />
+        }
     </div>
-    <h2>@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
-
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
-
-    <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
-</body>
+</div>
