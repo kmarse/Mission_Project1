@@ -1,0 +1,21 @@
+﻿@model Mission.Models.Missions
+@{
+    ViewBag.Title = "Mission";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+   function missionFAQ() {
+       var name = document.getElementById("mission").value;
+       var url = '/Home/MissionFAQ/' + name;
+       window.location.href = url;
+   }
+</script>
+<h2>Mission</h2>
+<select id="mission" onchange="missionFAQ()">
+    <option> -- select a mission -- </option>
+    @foreach (var item in ViewBag.Missions)
+    {
+        <option value="@item.Name">@item.Name</option>
+    }
+</select>
+

@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = ViewBag.Name + " FAQ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Mission FAQ</h2>
+<img src="@ViewBag.FlagUrl" />
+<p>Name: @ViewBag.Name</p>
+<p>President: @ViewBag.President</p>
+<p>Mission Language: @ViewBag.Language</p>
+<p>Dominant Religion: @ViewBag.Religion</p>
+@Html.Raw((String)ViewBag.Address)
+@Html.Raw((String)ViewBag.Weather)
+<script>
+   !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+</script>
+
