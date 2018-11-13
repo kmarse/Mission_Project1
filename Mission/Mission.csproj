@@ -156,7 +156,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Home.css" />
+    <Content Include="Content\Images\bomIcon.jpg" />
+    <Content Include="Content\Images\italy_rome_mission_icon.jpg" />
     <Content Include="Content\Images\Shirt and Tie.jpg" />
+    <Content Include="Content\Images\taiwan_taipei_mission_icon.jpg" />
+    <Content Include="Content\Images\temple_square_mission_icon.jpg" />
     <Content Include="Content\Images\Wood.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

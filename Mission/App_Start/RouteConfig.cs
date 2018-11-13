@@ -15,8 +15,8 @@ namespace Mission
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{controller}/{action}/{Name}",
+                defaults: new { controller = "Home", action = "Index", Name = UrlParameter.Optional }
             );
         }
     }
