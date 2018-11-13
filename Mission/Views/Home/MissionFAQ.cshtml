@@ -1,16 +1,35 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = ViewBag.Name + " FAQ";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Mission FAQ</h2>
-<img src="@ViewBag.FlagUrl" />
-<p>Name: @ViewBag.Name</p>
-<p>President: @ViewBag.President</p>
-<p>Mission Language: @ViewBag.Language</p>
-<p>Dominant Religion: @ViewBag.Religion</p>
-@Html.Raw((String)ViewBag.Address)
-@Html.Raw((String)ViewBag.Weather)
-<script>
-   !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
-</script>
+<head>
+    <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <ul class="ul">
+            <li><a href="@Url.Action("Index","Home")">Index</a></li>
+            <li><a href="@Url.Action("Mission","Home")">Mission</a></li>
+            <li><a class="active">MissionFAQ</a></li>
+            <li><a href="@Url.Action("Contact","Home")">Contact</a></li>
+            <li><a href="@Url.Action("About","Home")">About</a></li>
+        </ul>
+    </div>
+    <h2>Mission FAQ</h2>
+    @if (ViewBag.Name == null)
+    {
+        <h2>Please go to the mission view to choose a mission!</h2>
+    }
+    <img src="@ViewBag.FlagUrl" />
+    <p>Name: @ViewBag.Name</p>
+    <p>President: @ViewBag.President</p>
+    <p>Mission Language: @ViewBag.Language</p>
+    <p>Dominant Religion: @ViewBag.Religion</p>
 
+    @Html.Raw((String)ViewBag.Address)
+    @Html.Raw((String)ViewBag.Weather)
+</body>
+<script>
+    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+</script>
